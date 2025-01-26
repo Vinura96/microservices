@@ -1,0 +1,14 @@
+eureka:
+  instance:
+    hostname: localhost #our discovery service will be running locally
+  client:
+    register-with-eureka: false #since eureka server doesn't need to register with it self as a service
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+server:
+  port: 8761
+
+spring:
+  config:
+    import: optional:configserver:http://localhost:8888 #optional means, even if server configurations were not found it won't fail.
