@@ -5,16 +5,16 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/
 server:
-  port: 8090
+  port: 8070
 
 spring:
   application:
-    name: students
+    name: schools
   config:
     import: optional:configserver:http://localhost:8888 #optional means, even if server configurations were not found it won't fail.
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/students
+    url: jdbc:postgresql://localhost:5432/schools
     username: postgres
     password: Pgs17
   jpa:

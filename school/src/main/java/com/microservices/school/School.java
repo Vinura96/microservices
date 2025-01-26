@@ -1,4 +1,4 @@
-package com.microservices.student;
+package com.microservices.school;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
@@ -13,17 +13,15 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Student {
+public class School {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Integer id;
-    @JsonProperty("firstname")
-    private String firstname;
-    @JsonProperty("lastname")
-    private String lastname;
+    @JsonProperty("name")
+    private String name;
+
     @JsonProperty("email")
     private String email;
-    @JsonProperty("schoolId")
-    private Integer schoolId;
 }

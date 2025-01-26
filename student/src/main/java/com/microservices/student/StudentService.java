@@ -6,8 +6,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
 public class StudentService {
+
+    public StudentService(StudentRepository repository) {
+        this.repository = repository;
+    }
 
     private final StudentRepository repository;
     public void saveStudent(Student student) {
